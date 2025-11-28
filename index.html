@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMe - Votre Boutique en Ligne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gem"></i> ShopMe
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher un produit...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="nav-icons">
+                <div class="nav-icon">
+                    <i class="fas fa-box"></i>
+                    <span>Sur Commande</span>
+                </div>
+                <div class="nav-icon cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Panier</span>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Grid -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-item large">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Électronique">
+                    <div class="hero-overlay">
+                        <h3>Nouveaux Smartphones</h3>
+                        <p>Découvrez les dernières technologies</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                </div>
+                <div class="hero-item">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Informatique">
+                    <div class="hero-overlay">
+                        <h3>Ordinateurs</h3>
+                        <p>Performance et design</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                </div>
+                <div class="hero-item tall">
+                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instruments">
+                    <div class="hero-overlay">
+                        <h3>Instruments de Musique</h3>
+                        <p>Qualité professionnelle</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                </div>
+                <div class="hero-item">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bureau">
+                    <div class="hero-overlay">
+                        <h3>Fournitures de Bureau</h3>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                </div>
+                <div class="hero-item">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Agriculture">
+                    <div class="hero-overlay">
+                        <h3>Machines Agricoles</h3>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                </div>
+                <div class="hero-item">
+                    <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accessoires">
+                    <div class="hero-overlay">
+                        <h3>Accessoires Tech</h3>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+      <!-- Catégories -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-container">
+                <div class="category-item active" data-category="music">
+                    <i class="fas fa-music"></i>
+                    <span>Instruments de Musique</span>
+                </div>
+                <div class="category-item" data-category="agriculture">
+                    <i class="fas fa-tractor"></i>
+                    <span>Machines Agricoles</span>
+                </div>
+                <div class="category-item" data-category="electronics">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Appareils Électroniques</span>
+                </div>
+                <div class="category-item" data-category="office">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Accessoires de Bureau</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nos Produits Populaires</h2>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <select class="sort-select" id="sort-select">
+                        <option value="default">Trier par défaut</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Ordre alphabétique</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Les produits seront générés par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+     <!-- Produits sur Commande -->
+    <section class="custom-order-section">
+        <div class="container">
+            <h2 class="section-title">Produits Disponibles sur Commande</h2>
+            
+            <div class="custom-products-grid">
+                <div class="custom-product-card">
+                    <i class="fas fa-guitar"></i>
+                    <h3>Instruments Spéciaux</h3>
+                    <p>Guitares personnalisées, batteries électroniques et instruments rares disponibles sur commande</p>
+                    <button class="order-btn">Commander</button>
+                </div>
+                <div class="custom-product-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Équipements Professionnels</h3>
+                    <p>Machines agricoles spécialisées et outils industriels adaptés à vos besoins</p>
+                    <button class="order-btn">Commander</button>
+                </div>
+                <div class="custom-product-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Solutions Technologiques</h3>
+                    <p>Configurations informatiques sur mesure et équipements high-tech spécifiques</p>
+                    <button class="order-btn">Commander</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ShopMe</h3>
+                    <p>Votre boutique en ligne de confiance pour tous vos besoins. Qualité et satisfaction garanties.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Catégories</a></li>
+                        <li><a href="#">Produits</a></li>
+                        <li><a href="#">Panier</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Instruments de Musique</a></li>
+                        <li><a href="#">Machines Agricoles</a></li>
+                        <li><a href="#">Appareils Électroniques</a></li>
+                        <li><a href="#">Accessoires de Bureau</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i> contact@shopme.com</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +33 6 12 34 56 78</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Paris, France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ShopMe. Tous droits réservés. | Designed with <i class="fas fa-heart" style="color: var(--rouge);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier Modal -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Les articles du panier seront générés ici -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">0€</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Commander Maintenant</button>
+            <button class="whatsapp-btn" id="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
